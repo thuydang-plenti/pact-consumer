@@ -1,0 +1,278 @@
+{
+  "consumer": {
+    "name": "workflowServiceConsumer"
+  },
+  "interactions": [
+    {
+      "description": "A request to workflow Definition",
+      "providerState": "Given borrower journey workflow Definition",
+      "request": {
+        "method": "GET",
+        "path": "/WorkflowService/Definition/beeca942-a7a5-4192-b48c-3f9a24995e45/1"
+      },
+      "response": {
+        "body": {
+          "_links": {
+            "ApplicationAbandoned": {
+              "href": "ApplicationWithdrawn"
+            },
+            "ApplicationCanceled": {
+              "href": "ApplicationWithdrawn"
+            },
+            "ApplicationReceived": {
+              "href": "ApplicationReceived"
+            },
+            "AutomatedDecisioning": {
+              "href": null
+            },
+            "BankDetails": {
+              "href": "BankDetails"
+            },
+            "ConditionallyApprovedApplicationReceived": {
+              "href": null
+            },
+            "ConditionallyApprovedBankDetails": {
+              "href": null
+            },
+            "ConditionallyApprovedIdentity": {
+              "href": null
+            },
+            "FullApplication": {
+              "href": "FullApplication"
+            },
+            "Identity": {
+              "href": "Identity"
+            },
+            "InTriage": {
+              "href": "Processing"
+            },
+            "NoCreditFile": {
+              "href": "NoCreditFile"
+            },
+            "NotEligible": {
+              "href": "NotEligible"
+            },
+            "RateEstimate": {
+              "href": "RateEstimate"
+            },
+            "RateEstimateResult": {
+              "href": "RateEstimateResult"
+            },
+            "Refer": {
+              "href": "Refer"
+            },
+            "ReferFullApplication": {
+              "href": "ReferFullApplication"
+            },
+            "self": {
+              "href": "/definition/2000"
+            }
+          },
+          "id": 2000,
+          "name": "RateSetter Borrower Application (v2)",
+          "steps": [
+            {
+              "default": true,
+              "name": "RateEstimate"
+            },
+            {
+              "default": false,
+              "name": "InTriage"
+            },
+            {
+              "default": false,
+              "name": "RateEstimateResult"
+            },
+            {
+              "default": false,
+              "name": "FullApplication"
+            },
+            {
+              "default": false,
+              "name": "Identity"
+            },
+            {
+              "default": false,
+              "name": "BankDetails"
+            },
+            {
+              "default": false,
+              "name": "ApplicationReceived"
+            },
+            {
+              "default": false,
+              "name": "Refer"
+            },
+            {
+              "default": false,
+              "name": "ReferFullApplication"
+            },
+            {
+              "default": false,
+              "name": "NoCreditFile"
+            },
+            {
+              "default": false,
+              "name": "NotEligible"
+            },
+            {
+              "default": false,
+              "name": "ApplicationCanceled"
+            },
+            {
+              "default": false,
+              "name": "ApplicationAbandoned"
+            },
+            {
+              "default": false,
+              "name": "AutomatedDecisioning"
+            },
+            {
+              "default": false,
+              "name": "ConditionallyApprovedIdentity"
+            },
+            {
+              "default": false,
+              "name": "ConditionallyApprovedBankDetails"
+            },
+            {
+              "default": false,
+              "name": "ConditionallyApprovedApplicationReceived"
+            }
+          ],
+          "type": "BorrowerApplication"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "A request to workflow manifest Definition",
+      "providerState": "Given borrower journey workflow manifest Definition",
+      "request": {
+        "method": "GET",
+        "path": "/WorkflowService/Manifest/partner/beeca942-a7a5-4192-b48c-3f9a24995e45/Standard"
+      },
+      "response": {
+        "body": {
+          "_links": {
+            "green_borrowerapplication": {
+              "href": "/manifest/4a3f5ba1-f6b5-4fc1-b54b-dccce6d7991f/configuration/32db5a3e-422b-41b1-a213-e14152e6c3cf"
+            },
+            "green_brokerborrowerapplication": {
+              "href": "/manifest/4a3f5ba1-f6b5-4fc1-b54b-dccce6d7991f/configuration/7cbf5920-1b0b-448a-a55d-be323038fc4e"
+            },
+            "sarenewableenergy_borrowerapplication": {
+              "href": "/manifest/4a3f5ba1-f6b5-4fc1-b54b-dccce6d7991f/configuration/dce9121e-97ee-4220-9581-d5cdafb412c2"
+            },
+            "sarenewableenergy_brokerborrowerapplication": {
+              "href": "/manifest/4a3f5ba1-f6b5-4fc1-b54b-dccce6d7991f/configuration/2743fe75-609d-415a-898b-ff3faa79764f"
+            },
+            "self": {
+              "href": "/manifest/4a3f5ba1-f6b5-4fc1-b54b-dccce6d7991f"
+            },
+            "standard_borrowerapplication": {
+              "href": "/manifest/4a3f5ba1-f6b5-4fc1-b54b-dccce6d7991f/configuration/dbaedb02-0088-4ae8-add8-49ffd98ebbd5"
+            }
+          },
+          "author": null,
+          "configurations": [
+            {
+              "applicationModel": "borrowerApplication",
+              "brokerManifestControlTargets": [
+                "ExperimentalIndentityImageEnabled"
+              ],
+              "cobranding": null,
+              "context": "BorrowerApplication",
+              "experience": "Standard",
+              "id": "dbaedb02-0088-4ae8-add8-49ffd98ebbd5",
+              "isDefault": true,
+              "type": "All",
+              "uiDefinitionPrefix": ""
+            },
+            {
+              "applicationModel": "greenBorrowerApplication",
+              "brokerManifestControlTargets": null,
+              "cobranding": null,
+              "context": "BorrowerApplication",
+              "experience": "Green",
+              "id": "32db5a3e-422b-41b1-a213-e14152e6c3cf",
+              "isDefault": false,
+              "type": "All",
+              "uiDefinitionPrefix": "greenBorrower"
+            },
+            {
+              "applicationModel": "greenBrokerBorrowerApplication",
+              "brokerManifestControlTargets": null,
+              "cobranding": null,
+              "context": "BrokerBorrowerApplication",
+              "experience": "Green",
+              "id": "7cbf5920-1b0b-448a-a55d-be323038fc4e",
+              "isDefault": false,
+              "type": "All",
+              "uiDefinitionPrefix": "greenBrokerBorrower"
+            },
+            {
+              "applicationModel": "saRenewableEnergyBorrowerApplication",
+              "brokerManifestControlTargets": null,
+              "cobranding": null,
+              "context": "BorrowerApplication",
+              "experience": "SARenewableEnergy",
+              "id": "dce9121e-97ee-4220-9581-d5cdafb412c2",
+              "isDefault": false,
+              "type": "All",
+              "uiDefinitionPrefix": "saRenewableEnergyBorrower"
+            },
+            {
+              "applicationModel": "saRenewableEnergyBrokerBorrowerApplication",
+              "brokerManifestControlTargets": null,
+              "cobranding": null,
+              "context": "BrokerBorrowerApplication",
+              "experience": "SARenewableEnergy",
+              "id": "2743fe75-609d-415a-898b-ff3faa79764f",
+              "isDefault": false,
+              "type": "All",
+              "uiDefinitionPrefix": "saRenewableEnergyBrokerBorrower"
+            }
+          ],
+          "created": 636892370540000000,
+          "id": "4a3f5ba1-f6b5-4fc1-b54b-dccce6d7991f",
+          "isDeleted": false,
+          "lastModified": 637963275602221700,
+          "partnerId": "beeca942-a7a5-4192-b48c-3f9a24995e45"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "10.4.1"
+    },
+    "pactRust": {
+      "ffi": "0.4.0",
+      "models": "1.0.4"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "workflowServiceProvider"
+  }
+}

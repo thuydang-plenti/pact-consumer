@@ -1,0 +1,1687 @@
+{
+  "consumer": {
+    "name": "ApplicationServiceConsumer"
+  },
+  "interactions": [
+    {
+      "description": "A request to RateEstimate UI Definition",
+      "providerState": "Given a BorrowerJourney UIDefinition",
+      "request": {
+        "method": "GET",
+        "path": "/ApplicationService/UiDefinition/name/RateEstimate"
+      },
+      "response": {
+        "body": {
+          "Id": "664fa83d-ac98-411d-8b08-6540ac48733f",
+          "Name": "RateEstimate",
+          "UiDefinition": {
+            "ch": [
+              {
+                "component": "rs-nav",
+                "name": "nav"
+              },
+              {
+                "component": "rs-header",
+                "config": {
+                  "content": "Calculate how much you could borrow and get your personalised interest rate",
+                  "prefix": "TAKES 1 MINUTE",
+                  "title": "Get a personalised quote"
+                },
+                "cssClass": "rate-estimate-header",
+                "name": "header"
+              },
+              {
+                "ch": [
+                  {
+                    "ch": [
+                      {
+                        "ch": [
+                          {
+                            "ch": [
+                              {
+                                "component": "rs-content-heading",
+                                "config": {
+                                  "content": "Did you know?",
+                                  "level": 3
+                                },
+                                "name": "marketing-modal-title"
+                              },
+                              {
+                                "component": "rs-content-paragraph",
+                                "config": {
+                                  "content": "Completing our RateEstimate to find out how much you can borrow won’t affect your credit score."
+                                },
+                                "name": "marketing-modal-description"
+                              },
+                              {
+                                "ch": [
+                                  {
+                                    "component": "rs-content-heading",
+                                    "config": {
+                                      "content": "What actually happens?",
+                                      "level": 5
+                                    },
+                                    "name": "marketing-modal-bottom-subtitle"
+                                  },
+                                  {
+                                    "component": "rs-content-paragraph",
+                                    "config": {
+                                      "content": "When you request a RateEstimate, Plenti Pty Limited will request your credit file as an ‘access seeker’ from Equifax and/or Illion. This request will only be visible to you and other access seekers, will not be visible to credit providers, and will not affect your Equifax or Illion credit score."
+                                    },
+                                    "name": "marketing-modal-bottom-description"
+                                  }
+                                ],
+                                "component": "rs-ui-container",
+                                "cssClass": "marketing-modal-bottom",
+                                "name": "marketing-modal-bottom"
+                              }
+                            ],
+                            "component": "rs-content-modal",
+                            "config": {
+                              "content": "Getting a quote won't affect your credit score. {{toggleModal}}",
+                              "toggleModalText": "Learn more"
+                            },
+                            "cssClass": "wont-affect-your-credit-score",
+                            "name": "marketing-rate-estimate-modal"
+                          }
+                        ],
+                        "component": "rs-marketing-rate-estimate",
+                        "name": "marketing-rate-estimate"
+                      },
+                      {
+                        "ch": [
+                          {
+                            "ch": [
+                              {
+                                "appModelPath": "loan",
+                                "ch": [
+                                  {
+                                    "ch": [
+                                      {
+                                        "component": "rs-form-subtitle",
+                                        "content": "How much would you like to borrow?",
+                                        "cssClass": "page-subtitle",
+                                        "index": 1,
+                                        "name": "loanInfoSubtitle"
+                                      },
+                                      {
+                                        "appModelPath": "loan.amount",
+                                        "attrs": {
+                                          "autoFocus": true
+                                        },
+                                        "component": "rs-form-currency-input",
+                                        "config": {
+                                          "maximumAmount": 45000,
+                                          "minimumAmount": 5000,
+                                          "placeholder": "Amount between $5,000 and $45,000"
+                                        },
+                                        "cssClass": "prominent",
+                                        "errorMessage": "Enter your loan amount",
+                                        "name": "amount"
+                                      }
+                                    ],
+                                    "component": "rs-ui-container",
+                                    "cssClass": "form-container col-xs-12",
+                                    "initState": {
+                                      "hidden": false
+                                    },
+                                    "name": "loanAmountContainer"
+                                  },
+                                  {
+                                    "appModelPath": "loan.purpose",
+                                    "component": "rs-form-select",
+                                    "config": {
+                                      "name": "purpose",
+                                      "options": [
+                                        {
+                                          "key": "DebtConsolidation",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Debt Consolidation"
+                                        },
+                                        {
+                                          "key": "Car",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Car"
+                                        },
+                                        {
+                                          "key": "HomeImprovement",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Home Improvement"
+                                        },
+                                        {
+                                          "key": "Holiday",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Holiday"
+                                        },
+                                        {
+                                          "key": "Wedding",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Wedding"
+                                        },
+                                        {
+                                          "key": "Repairs",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Repairs"
+                                        },
+                                        {
+                                          "key": "MovingCosts",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Moving Costs"
+                                        },
+                                        {
+                                          "key": "RentalBond",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Rental Bond"
+                                        },
+                                        {
+                                          "key": "PayBills",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Pay Bills"
+                                        },
+                                        {
+                                          "key": "SolarBattery",
+                                          "showTarget": [
+                                            "greenLoanLink"
+                                          ],
+                                          "value": "Solar / Battery"
+                                        },
+                                        {
+                                          "key": "MedicalDental",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Medical"
+                                        },
+                                        {
+                                          "key": "ProfessionalServiceFees",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer",
+                                            "legalFinanceReferralMessage"
+                                          ],
+                                          "value": "Legal / Professional Services"
+                                        },
+                                        {
+                                          "key": "Boat",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Boat"
+                                        },
+                                        {
+                                          "key": "Motorbike",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Motorbike"
+                                        },
+                                        {
+                                          "key": "FuneralExpenses",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Funeral Expenses"
+                                        },
+                                        {
+                                          "key": "Business",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Business"
+                                        },
+                                        {
+                                          "key": "Investment",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Investment"
+                                        },
+                                        {
+                                          "key": "PersonalIncomeTax",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer"
+                                          ],
+                                          "value": "Personal Income Tax"
+                                        },
+                                        {
+                                          "key": "Other",
+                                          "showTarget": [
+                                            "sectionContainer",
+                                            "loanAmountContainer",
+                                            "loan.purposeReason"
+                                          ],
+                                          "value": "Other"
+                                        }
+                                      ],
+                                      "placeholder": "Loan purpose",
+                                      "title": "Loan Purpose"
+                                    },
+                                    "controlTarget": {
+                                      "targets": {
+                                        "autoDirectLink": "loan.autoDirectLink",
+                                        "purposeReason": "loan.purposeReason",
+                                        "useOfFund": "loan.useOfFund"
+                                      },
+                                      "type": "hide"
+                                    },
+                                    "errorMessage": "Loan purpose is required",
+                                    "name": "purpose",
+                                    "predicate": {
+                                      "op": "in",
+                                      "path": "loan.purpose",
+                                      "value": [
+                                        "DebtConsolidation",
+                                        "Car",
+                                        "Motorbike",
+                                        "HomeImprovement",
+                                        "Holiday",
+                                        "Wedding",
+                                        "Repairs",
+                                        "MovingCosts",
+                                        "RentalBond",
+                                        "PayBills",
+                                        "ProfessionalServiceFees",
+                                        "Business",
+                                        "Investment",
+                                        "FuneralExpenses",
+                                        "SolarBattery",
+                                        "MedicalDental",
+                                        "Boat",
+                                        "Other",
+                                        "PersonalIncomeTax"
+                                      ]
+                                    },
+                                    "service": "loanInfoService"
+                                  },
+                                  {
+                                    "appModelPath": "loan.autoDirectLink",
+                                    "component": "rs-message-referral",
+                                    "config": {
+                                      "name": "autoDirectReferMessage",
+                                      "referralType": "autoDirect",
+                                      "type": "info"
+                                    },
+                                    "initState": {
+                                      "hidden": true
+                                    },
+                                    "name": "autoDirectLink"
+                                  },
+                                  {
+                                    "component": "rs-message-referral",
+                                    "config": {
+                                      "referralType": "greenLoan",
+                                      "type": "info"
+                                    },
+                                    "initState": {
+                                      "hidden": true
+                                    },
+                                    "name": "greenLoanLink"
+                                  },
+                                  {
+                                    "component": "rs-message-referral",
+                                    "config": {
+                                      "referralType": "legalFinance",
+                                      "type": "info"
+                                    },
+                                    "initState": {
+                                      "hidden": true
+                                    },
+                                    "name": "legalFinanceReferralMessage"
+                                  },
+                                  {
+                                    "appModelPath": "loan.purposeReason",
+                                    "attrs": {
+                                      "placeholder": "What is the purpose?",
+                                      "type": "text"
+                                    },
+                                    "component": "rs-form-input",
+                                    "errorMessage": "A description is required of up to 40 characters",
+                                    "initState": {
+                                      "hidden": true
+                                    },
+                                    "name": "purposeReason",
+                                    "predicate": {
+                                      "op": "matches",
+                                      "path": "loan.purposeReason",
+                                      "value": "^.{1,40}$"
+                                    }
+                                  },
+                                  {
+                                    "appModelPath": "loan.useOfFund",
+                                    "attrs": {
+                                      "placeholder": "Describe the use of funds",
+                                      "type": "text"
+                                    },
+                                    "component": "rs-form-input",
+                                    "errorMessage": "A description is required of up to 40 charaters",
+                                    "initState": {
+                                      "hidden": true
+                                    },
+                                    "name": "loan.useOfFund",
+                                    "predicate": {
+                                      "op": "matches",
+                                      "path": "loan.useOfFund",
+                                      "value": "^.{1,40}$"
+                                    }
+                                  }
+                                ],
+                                "component": "rs-section",
+                                "name": "loan"
+                              },
+                              {
+                                "ch": [
+                                  {
+                                    "ch": [
+                                      {
+                                        "component": "rs-form-subtitle",
+                                        "content": "Your details",
+                                        "cssClass": "page-subtitle",
+                                        "index": 2,
+                                        "name": "personalDetailsSubtitle"
+                                      },
+                                      {
+                                        "ch": [
+                                          {
+                                            "component": "rs-message",
+                                            "config": {
+                                              "content": "<span class=\"important\">Important:</span> Enter your name and date of birth as it appears on your driver licence or passport as this will help us identify you.",
+                                              "name": "nameMatchMessage",
+                                              "type": "info"
+                                            },
+                                            "cssClass": "col-xs-12",
+                                            "name": "heading"
+                                          },
+                                          {
+                                            "appModelPath": "applicant.firstName",
+                                            "attrs": {
+                                              "name": "firstName",
+                                              "placeholder": "First name",
+                                              "type": "text"
+                                            },
+                                            "component": "rs-form-input",
+                                            "cssClass": "col-xs-12 col-sm-4 col-sm-gutter-right",
+                                            "errorMessage": "Invalid first name",
+                                            "icons": {
+                                              "left": "far fa-user"
+                                            },
+                                            "name": "firstName",
+                                            "predicate": {
+                                              "op": "matches",
+                                              "path": "applicant.firstName",
+                                              "value": "^[a-zA-Z]([ ]?[a-zA-Z\\-']){0,39}$"
+                                            }
+                                          },
+                                          {
+                                            "appModelPath": "applicant.middleName",
+                                            "attrs": {
+                                              "name": "middleName",
+                                              "placeholder": "Middle name",
+                                              "type": "text"
+                                            },
+                                            "component": "rs-form-input",
+                                            "cssClass": "col-xs-12 col-sm-4 col-sm-gutter-right",
+                                            "errorMessage": "Invalid middle name",
+                                            "icons": {
+                                              "left": "far fa-user"
+                                            },
+                                            "initState": {
+                                              "required": false
+                                            },
+                                            "name": "middleName",
+                                            "predicate": {
+                                              "op": "matches",
+                                              "path": "applicant.middleName",
+                                              "value": "^$|^[a-zA-Z]([ ]?[a-zA-Z\\-']){1,}$"
+                                            }
+                                          },
+                                          {
+                                            "appModelPath": "applicant.lastName",
+                                            "attrs": {
+                                              "name": "lastName",
+                                              "placeholder": "Last name",
+                                              "type": "text"
+                                            },
+                                            "component": "rs-form-input",
+                                            "cssClass": "col-xs-12 col-sm-4",
+                                            "errorMessage": "Invalid last name",
+                                            "icons": {
+                                              "left": "far fa-user"
+                                            },
+                                            "name": "lastName",
+                                            "predicate": {
+                                              "op": "matches",
+                                              "path": "applicant.lastName",
+                                              "value": "^[a-zA-Z]([ ]?[a-zA-Z\\-']){0,49}$"
+                                            }
+                                          }
+                                        ],
+                                        "component": "rs-section",
+                                        "cssClass": "row",
+                                        "name": "applicant.name"
+                                      },
+                                      {
+                                        "appModelPath": "contact.email",
+                                        "attrs": {
+                                          "name": "email",
+                                          "placeholder": "Email address",
+                                          "type": "text"
+                                        },
+                                        "component": "rs-form-input",
+                                        "cssClass": "col-xs-12",
+                                        "errorMessage": "Email address is required",
+                                        "icons": {
+                                          "left": "far fa-envelope"
+                                        },
+                                        "name": "email",
+                                        "predicate": {
+                                          "op": "matches",
+                                          "path": "contact.email",
+                                          "value": "^[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\\.)+(?!con)[a-zA-Z](?:[a-zA-Z-]*[a-zA-Z])$"
+                                        }
+                                      },
+                                      {
+                                        "appModelPath": "contact.mobileNumber",
+                                        "attrs": {
+                                          "autoComplete": false,
+                                          "name": "mobileNumber",
+                                          "placeholder": "Mobile number",
+                                          "type": "tel"
+                                        },
+                                        "component": "rs-form-input",
+                                        "cssClass": "col-xs-12",
+                                        "errorMessage": "Invalid mobile number (e.g. 0400123456)",
+                                        "icons": {
+                                          "left": "fas fa-mobile-alt"
+                                        },
+                                        "name": "mobile",
+                                        "predicate": {
+                                          "op": "matches",
+                                          "path": "contact.mobileNumber",
+                                          "value": "^04\\d{8}$"
+                                        }
+                                      },
+                                      {
+                                        "appModelPath": "applicant.dateOfBirth.isoString",
+                                        "attrs": {
+                                          "maxLength": 10,
+                                          "name": "dateOfBirth",
+                                          "placeholder": "Date of birth (DD/MM/YYYY)",
+                                          "type": "tel"
+                                        },
+                                        "component": "rs-form-input",
+                                        "cssClass": "col-xs-12",
+                                        "errorMessage": "Invalid date of birth (DD/MM/YYYY)",
+                                        "icons": {
+                                          "left": "far fa-calendar"
+                                        },
+                                        "mask": "dob",
+                                        "name": "dateOfBirthInputString",
+                                        "predicate": {
+                                          "op": "matches",
+                                          "path": "applicant.dateOfBirth.isoString",
+                                          "value": "^(\\d\\d\\d\\d)(-)?(\\d\\d)(-)?(\\d\\d)(T)?(\\d\\d)(:)?(\\d\\d)(:)?(\\d\\d)(\\.\\d+)?(Z|([+-])(\\d\\d)(:)?(\\d\\d))?$"
+                                        }
+                                      }
+                                    ],
+                                    "component": "rs-section",
+                                    "cssClass": "row",
+                                    "name": "personalDetails"
+                                  },
+                                  {
+                                    "ch": [
+                                      {
+                                        "appModelPath": "address.residentialAddress.residentialAddressContainer",
+                                        "ch": [
+                                          {
+                                            "component": "rs-form-subtitle",
+                                            "content": "Your home address",
+                                            "cssClass": "page-subtitle",
+                                            "index": 3,
+                                            "name": "addressDetailsSubtitle"
+                                          },
+                                          {
+                                            "component": "rs-form-hint",
+                                            "content": "Start typing your address below. If your address does not appear, enter it manually.",
+                                            "cssClass": "page-text",
+                                            "name": "addressDetailsSubtitleDescription"
+                                          },
+                                          {
+                                            "appModelPath": "address.residentialAddress.harmonyAddressWrapper",
+                                            "ch": [
+                                              {
+                                                "appModelPath": "address.residentialAddress.fullAddress",
+                                                "attrs": {
+                                                  "placeholder": "Start typing your home address"
+                                                },
+                                                "component": "rs-form-address-input",
+                                                "cssClass": "prominent",
+                                                "errorMessage": "Residential address is required",
+                                                "name": "residentialAddress"
+                                              },
+                                              {
+                                                "component": "rs-form-link",
+                                                "content": "Enter address manually +",
+                                                "cssClass": "address-link",
+                                                "name": "manualAddressLink"
+                                              }
+                                            ],
+                                            "component": "rs-section",
+                                            "initState": {
+                                              "hidden": false
+                                            },
+                                            "name": "harmonyAddressWrapper"
+                                          },
+                                          {
+                                            "appModelPath": "address.residentialAddress.manualAddressWrapper",
+                                            "ch": [
+                                              {
+                                                "appModelPath": "address.residentialAddress.sectionWrapper",
+                                                "ch": [
+                                                  {
+                                                    "appModelPath": "address.residentialAddress.unitNumber",
+                                                    "attrs": {
+                                                      "name": "residentialAddress.unitNumber",
+                                                      "placeholder": "Unit number",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "name": "unitNumber"
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.residentialAddress.streetNumber",
+                                                    "attrs": {
+                                                      "name": "residentialAddress.streetNumber",
+                                                      "placeholder": "Street number",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "errorMessage": "Street number is required",
+                                                    "name": "streetNumber",
+                                                    "predicate": {
+                                                      "op": "matches",
+                                                      "path": "address.residentialAddress.streetNumber",
+                                                      "value": "^.+$"
+                                                    }
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.residentialAddress.street",
+                                                    "attrs": {
+                                                      "name": "residentialAddress.street",
+                                                      "placeholder": "Street",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "errorMessage": "Street name is required",
+                                                    "name": "street",
+                                                    "predicate": {
+                                                      "op": "matches",
+                                                      "path": "address.residentialAddress.street",
+                                                      "value": "^[ '&a-zA-Z\\-]{2,30}$"
+                                                    }
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.residentialAddress.suburb",
+                                                    "attrs": {
+                                                      "name": "residentialAddress.suburb",
+                                                      "placeholder": "Suburb",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "errorMessage": "Suburb name is rqeuired",
+                                                    "name": "suburb",
+                                                    "predicate": {
+                                                      "op": "matches",
+                                                      "path": "address.residentialAddress.suburb",
+                                                      "value": "^[ '&a-zA-Z\\-]{2,30}$"
+                                                    }
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.residentialAddress.postCode",
+                                                    "attrs": {
+                                                      "name": "residentialAddress.postCode",
+                                                      "placeholder": "Postcode",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "errorMessage": "Postcode is required",
+                                                    "name": "postCode",
+                                                    "predicate": {
+                                                      "op": "matches",
+                                                      "path": "address.residentialAddress.postCode",
+                                                      "value": "^\\d{4}$"
+                                                    }
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.residentialAddress.state",
+                                                    "component": "rs-form-select",
+                                                    "config": {
+                                                      "name": "residentialAddress.state",
+                                                      "options": [
+                                                        {
+                                                          "key": "ACT",
+                                                          "value": "ACT"
+                                                        },
+                                                        {
+                                                          "key": "NSW",
+                                                          "value": "NSW"
+                                                        },
+                                                        {
+                                                          "key": "SA",
+                                                          "value": "SA"
+                                                        },
+                                                        {
+                                                          "key": "TAS",
+                                                          "value": "TAS"
+                                                        },
+                                                        {
+                                                          "key": "QLD",
+                                                          "value": "QLD"
+                                                        },
+                                                        {
+                                                          "key": "VIC",
+                                                          "value": "VIC"
+                                                        },
+                                                        {
+                                                          "key": "WA",
+                                                          "value": "WA"
+                                                        },
+                                                        {
+                                                          "key": "NT",
+                                                          "value": "NT"
+                                                        }
+                                                      ],
+                                                      "placeholder": "State"
+                                                    },
+                                                    "errorMessage": "State is required",
+                                                    "name": "state",
+                                                    "predicate": {
+                                                      "op": "in",
+                                                      "path": "address.residentialAddress.state",
+                                                      "value": [
+                                                        "ACT",
+                                                        "NSW",
+                                                        "SA",
+                                                        "TAS",
+                                                        "QLD",
+                                                        "VIC",
+                                                        "WA",
+                                                        "NT"
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                "component": "rs-section",
+                                                "name": "address"
+                                              },
+                                              {
+                                                "component": "rs-form-link",
+                                                "content": "Back to address search",
+                                                "cssClass": "address-link",
+                                                "name": "backToHarmonyAddressLink"
+                                              }
+                                            ],
+                                            "component": "rs-section",
+                                            "initState": {
+                                              "hidden": true
+                                            },
+                                            "name": "manualAddressWrapper"
+                                          },
+                                          {
+                                            "appModelPath": "address.residentialAddress.yearsAtAddress",
+                                            "component": "rs-form-select",
+                                            "config": {
+                                              "name": "residentialAddress.yearsAtAddress",
+                                              "options": [
+                                                {
+                                                  "key": "0",
+                                                  "value": "Less than 12 months"
+                                                },
+                                                {
+                                                  "key": "1",
+                                                  "value": "1 year"
+                                                },
+                                                {
+                                                  "key": "2",
+                                                  "value": "2 years"
+                                                },
+                                                {
+                                                  "key": "3",
+                                                  "value": "3 years"
+                                                },
+                                                {
+                                                  "key": "4",
+                                                  "value": "4 years"
+                                                },
+                                                {
+                                                  "key": "5",
+                                                  "value": "5 to 9 years"
+                                                },
+                                                {
+                                                  "key": "10",
+                                                  "value": "10 years or greater"
+                                                }
+                                              ],
+                                              "placeholder": "Years at address"
+                                            },
+                                            "errorMessage": "Years at address is required",
+                                            "name": "residentialAddressYearsAtAddress",
+                                            "predicate": {
+                                              "op": "in",
+                                              "path": "address.residentialAddress.yearsAtAddress",
+                                              "value": [
+                                                "0",
+                                                "1",
+                                                "2",
+                                                "3",
+                                                "4",
+                                                "5",
+                                                "10"
+                                              ]
+                                            },
+                                            "service": "addressService"
+                                          },
+                                          {
+                                            "appModelPath": "housing.ownershipStatus",
+                                            "component": "rs-form-select",
+                                            "config": {
+                                              "name": "homeOwnership",
+                                              "options": [
+                                                {
+                                                  "key": "OwnAHomeWithMortgage",
+                                                  "value": "I own the home I live in (with mortgage)"
+                                                },
+                                                {
+                                                  "key": "OwnAHomeWithoutMortgage",
+                                                  "value": "I own the home I live in (without mortgage)"
+                                                },
+                                                {
+                                                  "key": "TenantWithMortgage",
+                                                  "value": "I'm a tenant (but I have a mortgage on another property)"
+                                                },
+                                                {
+                                                  "key": "TenantWithoutMortgage",
+                                                  "value": "I'm a tenant (renting)"
+                                                },
+                                                {
+                                                  "key": "Boarder",
+                                                  "value": "I'm a boarder"
+                                                },
+                                                {
+                                                  "key": "LivingWithParents",
+                                                  "value": "I'm living with parents"
+                                                }
+                                              ],
+                                              "placeholder": "Home ownership"
+                                            },
+                                            "errorMessage": "Home ownership is required",
+                                            "name": "homeOwnership",
+                                            "predicate": {
+                                              "op": "in",
+                                              "path": "housing.ownershipStatus",
+                                              "value": [
+                                                "OwnAHomeWithMortgage",
+                                                "OwnAHomeWithoutMortgage",
+                                                "TenantWithMortgage",
+                                                "TenantWithoutMortgage",
+                                                "Boarder",
+                                                "LivingWithParents"
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        "component": "rs-ui-container",
+                                        "name": "residentialAddressContainer",
+                                        "service": "addressService"
+                                      }
+                                    ],
+                                    "component": "rs-section",
+                                    "name": "individualAddressSection"
+                                  },
+                                  {
+                                    "appModelPath": "address.previousAddress",
+                                    "ch": [
+                                      {
+                                        "appModelPath": "address.previousAddress.previousResidentialAddressContainer",
+                                        "ch": [
+                                          {
+                                            "component": "rs-form-subtitle",
+                                            "content": "Previous Address Details",
+                                            "cssClass": "page-subtitle",
+                                            "name": "previousAddressDetailsSubtitle"
+                                          },
+                                          {
+                                            "appModelPath": "address.previousAddress.harmonyPreviousAddressWrapper",
+                                            "ch": [
+                                              {
+                                                "appModelPath": "address.previousAddress.fullAddress",
+                                                "attrs": {
+                                                  "placeholder": "Start typing your previous home address"
+                                                },
+                                                "component": "rs-form-address-input",
+                                                "errorMessage": "Previous address is required",
+                                                "name": "previousResidentialAddress"
+                                              },
+                                              {
+                                                "component": "rs-form-link",
+                                                "content": "Enter address manually",
+                                                "cssClass": "address-link",
+                                                "name": "manualPreviousAddressLink"
+                                              }
+                                            ],
+                                            "component": "rs-section",
+                                            "initState": {
+                                              "hidden": false
+                                            },
+                                            "name": "harmonyPreviousAddressWrapper"
+                                          },
+                                          {
+                                            "appModelPath": "address.previousAddress.manualPreviousAddressWrapper",
+                                            "ch": [
+                                              {
+                                                "appModelPath": "address.previousAddress.sectionWrapper",
+                                                "ch": [
+                                                  {
+                                                    "appModelPath": "address.previousAddress.unitNumber",
+                                                    "attrs": {
+                                                      "name": "previousAddress.unitNumber",
+                                                      "placeholder": "Unit number",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "name": "unitNumber"
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.previousAddress.streetNumber",
+                                                    "attrs": {
+                                                      "name": "previousAddress.streetNumber",
+                                                      "placeholder": "Street number",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "errorMessage": "Street number is required",
+                                                    "name": "streetNumber",
+                                                    "predicate": {
+                                                      "op": "matches",
+                                                      "path": "address.previousAddress.streetNumber",
+                                                      "value": "^.+$"
+                                                    }
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.previousAddress.street",
+                                                    "attrs": {
+                                                      "name": "previousAddress.street",
+                                                      "placeholder": "Street",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "errorMessage": "Street name is required",
+                                                    "name": "street",
+                                                    "predicate": {
+                                                      "op": "matches",
+                                                      "path": "address.previousAddress.street",
+                                                      "value": "^[ '&a-zA-Z\\-]{2,30}$"
+                                                    }
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.previousAddress.suburb",
+                                                    "attrs": {
+                                                      "name": "previousAddress.suburb",
+                                                      "placeholder": "Suburb",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "errorMessage": "Suburb name is required",
+                                                    "name": "suburb",
+                                                    "predicate": {
+                                                      "op": "matches",
+                                                      "path": "address.previousAddress.suburb",
+                                                      "value": "^[ '&a-zA-Z\\-]{2,30}$"
+                                                    }
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.previousAddress.postCode",
+                                                    "attrs": {
+                                                      "name": "address.previousAddress.postCode",
+                                                      "placeholder": "Postcode",
+                                                      "type": "text"
+                                                    },
+                                                    "component": "rs-form-input",
+                                                    "errorMessage": "Postcode is required",
+                                                    "name": "postCode",
+                                                    "predicate": {
+                                                      "op": "matches",
+                                                      "path": "address.previousAddress.postCode",
+                                                      "value": "^\\d{4}$"
+                                                    }
+                                                  },
+                                                  {
+                                                    "appModelPath": "address.previousAddress.state",
+                                                    "component": "rs-form-select",
+                                                    "config": {
+                                                      "name": "address.previousAddress.state",
+                                                      "options": [
+                                                        {
+                                                          "key": "ACT",
+                                                          "value": "ACT"
+                                                        },
+                                                        {
+                                                          "key": "NSW",
+                                                          "value": "NSW"
+                                                        },
+                                                        {
+                                                          "key": "SA",
+                                                          "value": "SA"
+                                                        },
+                                                        {
+                                                          "key": "TAS",
+                                                          "value": "TAS"
+                                                        },
+                                                        {
+                                                          "key": "QLD",
+                                                          "value": "QLD"
+                                                        },
+                                                        {
+                                                          "key": "VIC",
+                                                          "value": "VIC"
+                                                        },
+                                                        {
+                                                          "key": "WA",
+                                                          "value": "WA"
+                                                        },
+                                                        {
+                                                          "key": "NT",
+                                                          "value": "NT"
+                                                        }
+                                                      ],
+                                                      "placeholder": "State"
+                                                    },
+                                                    "errorMessage": "State is required",
+                                                    "name": "state",
+                                                    "predicate": {
+                                                      "op": "in",
+                                                      "path": "address.previousAddress.state",
+                                                      "value": [
+                                                        "ACT",
+                                                        "NSW",
+                                                        "SA",
+                                                        "TAS",
+                                                        "QLD",
+                                                        "VIC",
+                                                        "WA",
+                                                        "NT"
+                                                      ]
+                                                    }
+                                                  }
+                                                ],
+                                                "component": "rs-section",
+                                                "name": "previousAddressDetails"
+                                              },
+                                              {
+                                                "component": "rs-form-link",
+                                                "content": "Back to address search",
+                                                "cssClass": "address-link",
+                                                "name": "backToHarmonyPreviousAddressLink"
+                                              }
+                                            ],
+                                            "component": "rs-section",
+                                            "initState": {
+                                              "hidden": true
+                                            },
+                                            "name": "manualPreviousAddressWrapper"
+                                          },
+                                          {
+                                            "appModelPath": "address.previousAddress.yearsAtAddress",
+                                            "component": "rs-form-select",
+                                            "config": {
+                                              "name": "address.previousAddress.yearsAtAddress",
+                                              "options": [
+                                                {
+                                                  "key": "0",
+                                                  "value": "Less than 12 months"
+                                                },
+                                                {
+                                                  "key": "1",
+                                                  "value": "1 year"
+                                                },
+                                                {
+                                                  "key": "2",
+                                                  "value": "2 years"
+                                                },
+                                                {
+                                                  "key": "3",
+                                                  "value": "3 years"
+                                                },
+                                                {
+                                                  "key": "4",
+                                                  "value": "4 years"
+                                                },
+                                                {
+                                                  "key": "5",
+                                                  "value": "5 to 9 years"
+                                                },
+                                                {
+                                                  "key": "10",
+                                                  "value": "10 years or greater"
+                                                }
+                                              ],
+                                              "placeholder": "Years at previous address"
+                                            },
+                                            "errorMessage": "Years at address is required",
+                                            "name": "previousAddressYearsAtAddress",
+                                            "predicate": {
+                                              "op": "in",
+                                              "path": "address.previousAddress.yearsAtAddress",
+                                              "value": [
+                                                "0",
+                                                "1",
+                                                "2",
+                                                "3",
+                                                "4",
+                                                "5",
+                                                "10"
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        "component": "rs-ui-container",
+                                        "name": "previousResidentialAddressContainer",
+                                        "service": "addressService"
+                                      }
+                                    ],
+                                    "component": "rs-section",
+                                    "initState": {
+                                      "hidden": true
+                                    },
+                                    "name": "previousAddressSection"
+                                  },
+                                  {
+                                    "ch": [
+                                      {
+                                        "component": "rs-form-subtitle",
+                                        "content": "Your income and employment",
+                                        "cssClass": "page-subtitle",
+                                        "index": 4,
+                                        "name": "financialDetailsSubtitle"
+                                      },
+                                      {
+                                        "appModelPath": "finances.income",
+                                        "component": "rs-form-currency-input",
+                                        "config": {
+                                          "placeholder": "Annual pre-tax income"
+                                        },
+                                        "controlTarget": {
+                                          "data": {
+                                            "grossIncomeValue": "finances.income"
+                                          },
+                                          "target": "finances.grossIncomeThreshold",
+                                          "type": "show"
+                                        },
+                                        "cssClass": "col-xs-12",
+                                        "errorMessage": "Enter your ANNUAL pre-tax income",
+                                        "name": "income",
+                                        "service": "incomeService"
+                                      },
+                                      {
+                                        "appModelPath": "finances.grossIncomeThreshold",
+                                        "component": "rs-message",
+                                        "config": {
+                                          "content": "<span class=\"important\">Important:</span> please make sure this is your annual income",
+                                          "name": "grossIncomeThresholdMessage",
+                                          "type": "info"
+                                        },
+                                        "cssClass": "col-xs-12 last-sm message-bubble",
+                                        "initState": {
+                                          "hidden": true
+                                        },
+                                        "name": "grossIncomeThreshold"
+                                      },
+                                      {
+                                        "appModelPath": "finances.employment",
+                                        "component": "rs-form-select",
+                                        "config": {
+                                          "name": "employment",
+                                          "options": [
+                                            {
+                                              "key": "FullTime",
+                                              "value": "Full time"
+                                            },
+                                            {
+                                              "key": "PartTime",
+                                              "showTarget": "employment-message-6-months",
+                                              "value": "Part time"
+                                            },
+                                            {
+                                              "key": "Contract",
+                                              "showTarget": "employment-message-6-months",
+                                              "value": "Contract"
+                                            },
+                                            {
+                                              "key": "SelfEmployed",
+                                              "showTarget": "employment-message-12-months",
+                                              "value": "Self employed"
+                                            },
+                                            {
+                                              "key": "Retired",
+                                              "value": "Retired"
+                                            },
+                                            {
+                                              "key": "CurrentlyUnemployed",
+                                              "value": "Unemployed"
+                                            },
+                                            {
+                                              "key": "Casual",
+                                              "showTarget": "employment-message-6-months",
+                                              "value": "Casual"
+                                            },
+                                            {
+                                              "key": "AgedOrServicePensioner",
+                                              "value": "Pensioner"
+                                            }
+                                          ],
+                                          "placeholder": "Employment status"
+                                        },
+                                        "cssClass": "col-xs-12",
+                                        "errorMessage": "Employment type is required",
+                                        "name": "employment",
+                                        "predicate": {
+                                          "op": "in",
+                                          "path": "finances.employment",
+                                          "value": [
+                                            "FullTime",
+                                            "PartTime",
+                                            "Contract",
+                                            "SelfEmployed",
+                                            "SoleTrader",
+                                            "Retired",
+                                            "CurrentlyUnemployed",
+                                            "Casual",
+                                            "AgedOrServicePensioner"
+                                          ]
+                                        }
+                                      },
+                                      {
+                                        "component": "rs-message",
+                                        "config": {
+                                          "content": "This employment status requires a minimum of 6 months in your current role",
+                                          "icon": "fa fa-question-circle",
+                                          "name": "employmentStatusMessage",
+                                          "type": "warning"
+                                        },
+                                        "cssClass": "col-xs-12",
+                                        "initState": {
+                                          "hidden": true
+                                        },
+                                        "name": "employment-message-6-months"
+                                      },
+                                      {
+                                        "component": "rs-message",
+                                        "config": {
+                                          "content": "This employment status requires a minimum of 12 months in your current role",
+                                          "icon": "fa fa-question-circle",
+                                          "name": "employmentStatusMessage",
+                                          "type": "warning"
+                                        },
+                                        "cssClass": "col-xs-12",
+                                        "initState": {
+                                          "hidden": true
+                                        },
+                                        "name": "employment-message-12-months"
+                                      },
+                                      {
+                                        "appModelPath": "finances.numberOfDependants",
+                                        "component": "rs-form-select",
+                                        "config": {
+                                          "name": "numberOfDependants",
+                                          "options": [
+                                            {
+                                              "key": "0",
+                                              "value": "0"
+                                            },
+                                            {
+                                              "key": "1",
+                                              "value": "1"
+                                            },
+                                            {
+                                              "key": "2",
+                                              "value": "2"
+                                            },
+                                            {
+                                              "key": "3",
+                                              "value": "3"
+                                            },
+                                            {
+                                              "key": "4",
+                                              "value": "4"
+                                            },
+                                            {
+                                              "key": "5",
+                                              "value": "5"
+                                            },
+                                            {
+                                              "key": "6",
+                                              "value": "6"
+                                            },
+                                            {
+                                              "key": "7",
+                                              "value": "7"
+                                            },
+                                            {
+                                              "key": "8",
+                                              "value": "8"
+                                            }
+                                          ],
+                                          "placeholder": "Number of dependent children"
+                                        },
+                                        "cssClass": "col-xs-12",
+                                        "errorMessage": "Number of dependants is required",
+                                        "name": "numberOfDependants",
+                                        "predicate": {
+                                          "op": "in",
+                                          "path": "finances.numberOfDependants",
+                                          "value": [
+                                            "0",
+                                            "1",
+                                            "2",
+                                            "3",
+                                            "4",
+                                            "5",
+                                            "6",
+                                            "7",
+                                            "8"
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "component": "rs-section",
+                                    "cssClass": "financial-details",
+                                    "name": "financialDetails"
+                                  },
+                                  {
+                                    "ch": [
+                                      {
+                                        "component": "rs-form-subtitle",
+                                        "content": "Complete and submit",
+                                        "cssClass": "page-subtitle",
+                                        "index": 5,
+                                        "name": "termsAndConditionsSubtitle"
+                                      },
+                                      {
+                                        "appModelPath": "termsAndConditions.creditReportingAgreement",
+                                        "component": "rs-form-yes-no",
+                                        "config": {
+                                          "content": "I authorise Plenti Pty Limited to act as my agent and contact a credit reporting body on my behalf to access my credit report.",
+                                          "initialValue": false
+                                        },
+                                        "errorMessage": "This field is required",
+                                        "initState": {
+                                          "required": true
+                                        },
+                                        "name": "creditReportingAgreement"
+                                      },
+                                      {
+                                        "appModelPath": "termsAndConditions.privacyAgreement",
+                                        "component": "rs-form-yes-no",
+                                        "config": {
+                                          "content": "I have read and agree to the <a href=\"https://www.plenti.com.au/about-us/legal/terms-and-conditions\" target=\"_blank\">Terms and Conditions</a>, and <a href=\"https://www.plenti.com.au/privacy/statement/\" target=\"_blank\">Privacy Statement and Electronic Communications Consent</a>. If I am not eligible for a RateEstimate, I agree that my personal information may be referred to a third party who may be able to assist me with a loan. Plenti may be paid a commission for this referral.",
+                                          "initialValue": false
+                                        },
+                                        "errorMessage": "This field is required",
+                                        "initState": {
+                                          "required": true
+                                        },
+                                        "name": "privacyAgreement"
+                                      }
+                                    ],
+                                    "component": "rs-section",
+                                    "cssClass": "terms-and-conditions",
+                                    "name": "termsAndConditions"
+                                  },
+                                  {
+                                    "component": "rs-form-submit",
+                                    "config": {
+                                      "errorText": "Oops... You seem to have missed some fields. Please complete these and submit again",
+                                      "subText": "Getting a quote won't affect your credit score.",
+                                      "text": "Get your personalised quote"
+                                    },
+                                    "initState": {
+                                      "hidden": false
+                                    },
+                                    "name": "formSubmitButton"
+                                  }
+                                ],
+                                "component": "rs-ui-container",
+                                "cssClass": "form-container col-xs-12",
+                                "initState": {
+                                  "hidden": false
+                                },
+                                "name": "sectionContainer"
+                              }
+                            ],
+                            "component": "rs-form",
+                            "name": "rateEstimateForm",
+                            "validators": [
+                              {
+                                "target": "applicant.dateOfBirth.isoString",
+                                "validator": "dateOfBirth"
+                              }
+                            ]
+                          },
+                          {
+                            "ch": [
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "Canstar Oustanding Value - Personal Loan",
+                                  "src": "awards/award-canstar-personal-loan.png"
+                                },
+                                "cssClass": "award col-xs-2",
+                                "name": "award-canstar"
+                              },
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "Canstar Oustanding Value - Car Loan",
+                                  "src": "awards/award-canstar-car-loan.png"
+                                },
+                                "cssClass": "col-xs-2",
+                                "name": "award-canstar"
+                              },
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "Winner of RateCity's Gold Award Excellent Credit - Personal Loan",
+                                  "src": "awards/award-ratecity.png"
+                                },
+                                "cssClass": "col-xs-3",
+                                "name": "award-finnies"
+                              },
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "Mozo Experts Choice - Excellent Credit Personal Loan",
+                                  "src": "awards/award-mozo.png"
+                                },
+                                "cssClass": "col-xs-2",
+                                "name": "award-mozo"
+                              },
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "Winner of InfoChoice - Personal Loan Lender",
+                                  "src": "awards/award-infochoice.svg"
+                                },
+                                "cssClass": "col-xs-2",
+                                "name": "award-infochoice"
+                              }
+                            ],
+                            "component": "rs-section",
+                            "cssClass": "award-section row center-xs",
+                            "name": "award-section"
+                          }
+                        ],
+                        "component": "rs-ui-container",
+                        "cssClass": "form-container col-xs-12",
+                        "name": "rateEstimateFormContainer"
+                      },
+                      {
+                        "ch": [
+                          {
+                            "ch": [
+                              {
+                                "component": "rs-content-heading",
+                                "config": {
+                                  "content": "Borrowers",
+                                  "level": 5
+                                },
+                                "name": "aside-about-ratesetter-heading"
+                              },
+                              {
+                                "component": "rs-content-paragraph",
+                                "config": {
+                                  "content": "Plenti makes borrowing more rewarding. With flexible personal loans at competitive rates, borrowers can get ahead in life and achieve more with their money. It's fairer finance that works for everyone."
+                                },
+                                "name": "aside-about-ratesetter-paragraph"
+                              }
+                            ],
+                            "component": "rs-section",
+                            "cssClass": "divider",
+                            "name": "aside-section-about-ratesetter"
+                          },
+                          {
+                            "ch": [
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "ProductReview.com.au 2019 Awards Winner",
+                                  "src": "awards/product-review-awards-winner.png"
+                                },
+                                "name": "aside-product-review-winner"
+                              },
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "4.8",
+                                  "src": "awards/product-review-stars.png"
+                                },
+                                "name": "aside-product-review-stars"
+                              },
+                              {
+                                "component": "rs-content-paragraph",
+                                "config": {
+                                  "content": "from 1,874 Reviews"
+                                },
+                                "cssClass": "small-text",
+                                "name": "aside-product-review-paragraph"
+                              }
+                            ],
+                            "component": "rs-section",
+                            "cssClass": "divider",
+                            "name": "aside-section-about-ratesetter"
+                          },
+                          {
+                            "ch": [
+                              {
+                                "ch": [
+                                  {
+                                    "component": "rs-content-image",
+                                    "config": {
+                                      "alt": "Canstar Oustanding Value - Personal Loan",
+                                      "src": "awards/award-canstar-personal-loan.png"
+                                    },
+                                    "cssClass": "award",
+                                    "name": "award-canstar"
+                                  },
+                                  {
+                                    "component": "rs-content-image",
+                                    "config": {
+                                      "alt": "Canstar Oustanding Value - Personal Loan",
+                                      "src": "awards/award-canstar-car-loan.png"
+                                    },
+                                    "cssClass": "award",
+                                    "name": "award-canstar"
+                                  }
+                                ],
+                                "component": "rs-section",
+                                "cssClass": "award-section row",
+                                "name": "award"
+                              },
+                              {
+                                "component": "rs-content-paragraph",
+                                "config": {
+                                  "content": "Winner of Canstar’s Outstanding Value Personal Loan and Car Loan 2020"
+                                },
+                                "cssClass": "small-text",
+                                "name": "aside-product-review-paragraph"
+                              }
+                            ],
+                            "component": "rs-section",
+                            "cssClass": "divider",
+                            "name": "aside-section-about-ratesetter"
+                          },
+                          {
+                            "ch": [
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "Winner of RateCity's Gold Award Excellent Credit - Personal Loan",
+                                  "src": "awards/award-ratecity.png"
+                                },
+                                "cssClass": "award",
+                                "name": "award-rateCity"
+                              },
+                              {
+                                "component": "rs-content-paragraph",
+                                "config": {
+                                  "content": "Winner of RateCity's Gold Award Excellent Credit Personal Loans 2020, 2021"
+                                },
+                                "cssClass": "small-text",
+                                "name": "aside-product-review-paragraph"
+                              }
+                            ],
+                            "component": "rs-section",
+                            "cssClass": "divider",
+                            "name": "aside-section-about-ratesetter"
+                          },
+                          {
+                            "ch": [
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "Mozo Experts Choice - Excellent Credit Personal Loan",
+                                  "src": "awards/award-mozo.png"
+                                },
+                                "cssClass": "award",
+                                "name": "award-mozo"
+                              },
+                              {
+                                "component": "rs-content-paragraph",
+                                "config": {
+                                  "content": "Winner of Mozo's Unsecured Personal Loan 2019"
+                                },
+                                "cssClass": "small-text",
+                                "name": "aside-product-review-paragraph"
+                              }
+                            ],
+                            "component": "rs-section",
+                            "cssClass": "divider",
+                            "name": "aside-section-about-ratesetter"
+                          },
+                          {
+                            "ch": [
+                              {
+                                "component": "rs-content-image",
+                                "config": {
+                                  "alt": "Winner of InfoChoice - Personal Loan Lender",
+                                  "src": "awards/award-infochoice.svg"
+                                },
+                                "cssClass": "award",
+                                "name": "award-infochoice"
+                              },
+                              {
+                                "component": "rs-content-paragraph",
+                                "config": {
+                                  "content": "Winner of InfoChoice Personal Loan Lender of the Year 2021"
+                                },
+                                "cssClass": "small-text",
+                                "name": "aside-product-review-paragraph"
+                              }
+                            ],
+                            "component": "rs-section",
+                            "cssClass": "divider",
+                            "name": "aside-section-about-ratesetter"
+                          }
+                        ],
+                        "component": "rs-section",
+                        "cssClass": "re-aside hidden-md",
+                        "name": "aside-section"
+                      }
+                    ],
+                    "component": "rs-section",
+                    "cssClass": "main-section row",
+                    "name": "main-section"
+                  }
+                ],
+                "component": "rs-ui-container",
+                "cssClass": "body-container",
+                "name": "bodyContainer"
+              },
+              {
+                "component": "rs-footer",
+                "config": {
+                  "termsConditions": "<p>Rates and repayments indicated are estimates only and are subject to change at any time without notice.<br />Displayed loan options do not constitute an offer for credit.</p><p>The information and any advice on this website has been prepared without taking account of your objectives, financial situation or needs. Before acting upon any advice, you should consider whether it is appropriate for you. Plenti Pty Limited does not provide any assurance, guarantee or recommendation in relation to any information presented on this webpage.<br />Plenti takes your privacy seriously. All information about you is held subject to our Privacy Policy.<br />Copyright © 2020. All rights reserved.</p>"
+                },
+                "name": "footer"
+              }
+            ],
+            "component": "rs-ui-container",
+            "name": "rootContainer"
+          },
+          "_links": [
+            {
+              "Href": "/uidefinition/664fa83d-ac98-411d-8b08-6540ac48733f",
+              "Rel": ""
+            }
+          ]
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "10.4.1"
+    },
+    "pactRust": {
+      "ffi": "0.4.0",
+      "models": "1.0.4"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "ApplicationServiceProvider"
+  }
+}

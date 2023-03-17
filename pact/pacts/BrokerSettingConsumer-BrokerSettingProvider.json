@@ -1,0 +1,60 @@
+{
+  "consumer": {
+    "name": "BrokerSettingConsumer"
+  },
+  "interactions": [
+    {
+      "description": "A request to RateEstimate UI Definition",
+      "providerState": "Given a BorrowerJourney UIDefinition",
+      "request": {
+        "method": "GET",
+        "path": "/broker/brokerSettingInfo/beeca942-a7a5-4192-b48c-3f9a24995e45"
+      },
+      "response": {
+        "body": {
+          "AllowExtraBrokerValidation": true,
+          "AutoPartner": "",
+          "Experience": "Standard",
+          "HasPartnerIntegrationWorkflow": false,
+          "HasSettlementWorkflow": true,
+          "IsAutoBroker": false,
+          "IsAutoClassicBroker": false,
+          "IsAutoCommercialBroker": false,
+          "IsAutoConsumerBroker": false,
+          "IsAutoConsumerDirectBroker": false,
+          "IsAutoPremiumBroker": false,
+          "IsContractLoanDecouplingEnabled": false,
+          "IsRefinanceBroker": false,
+          "MaxBrokerageOverride": null,
+          "Name": "RateSetter New",
+          "ReferralCode": "RS_NEW",
+          "RequireInsuranceInCommercialContract": false
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "10.4.1"
+    },
+    "pactRust": {
+      "ffi": "0.4.0",
+      "models": "1.0.4"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "BrokerSettingProvider"
+  }
+}
