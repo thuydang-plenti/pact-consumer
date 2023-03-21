@@ -4,6 +4,44 @@
   },
   "interactions": [
     {
+      "description": "A request to Get Broker UI Definition",
+      "providerState": "Given a BorrowerJourney Broker Setting",
+      "request": {
+        "method": "GET",
+        "path": "/broker/brokerSettingInfo/beeca942-a7a5-4192-b48c-3f9a24995e45"
+      },
+      "response": {
+        "body": {
+          "AllowExtraBrokerValidation": true,
+          "AutoPartner": "",
+          "Experience": "Standard",
+          "HasPartnerIntegrationWorkflow": false,
+          "HasSettlementWorkflow": true,
+          "IsAutoBroker": false,
+          "IsAutoClassicBroker": false,
+          "IsAutoCommercialBroker": false,
+          "IsAutoConsumerBroker": false,
+          "IsAutoConsumerDirectBroker": false,
+          "IsAutoPremiumBroker": false,
+          "IsContractLoanDecouplingEnabled": false,
+          "IsRefinanceBroker": false,
+          "MaxBrokerageOverride": null,
+          "Name": "RateSetter New",
+          "ReferralCode": "RS_NEW",
+          "RequireInsuranceInCommercialContract": false
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
       "description": "A request to RateEstimate UI Definition",
       "providerState": "Given a BorrowerJourney UIDefinition",
       "request": {

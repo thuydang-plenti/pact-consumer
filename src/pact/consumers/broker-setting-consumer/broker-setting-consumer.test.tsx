@@ -13,8 +13,8 @@ pactWith({ consumer: 'BrokerSettingConsumer', provider: 'BrokerSettingProvider' 
   describe('get rate estimate ui definition', () => {
     beforeEach(() => 
       provider.addInteraction({
-        state: "Given a BorrowerJourney UIDefinition",
-        uponReceiving: 'A request to RateEstimate UI Definition',
+        state: "Given a BorrowerJourney Broker Setting",
+        uponReceiving: 'A request to Get Broker UI Definition',
         willRespondWith: {
           status: 200,
           body: Matchers.like({

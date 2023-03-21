@@ -1,0 +1,148 @@
+{
+  "consumer": {
+    "name": "RateServiceConsumer"
+  },
+  "interactions": [
+    {
+      "description": "A request to get rate",
+      "providerState": "Given Rate",
+      "request": {
+        "method": "GET",
+        "path": "/Rates/OriginationTiers"
+      },
+      "response": {
+        "body": [
+          {
+            "maxLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 999999
+            },
+            "maxOriginationFee": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 99000
+            },
+            "minLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 0
+            }
+          },
+          {
+            "maxLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 1999999
+            },
+            "maxOriginationFee": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 150000
+            },
+            "minLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 1000000
+            }
+          },
+          {
+            "maxLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 3499999
+            },
+            "maxOriginationFee": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 200000
+            },
+            "minLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 2000000
+            }
+          },
+          {
+            "maxLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 9223372036854776000
+            },
+            "maxOriginationFee": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 250000
+            },
+            "minLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 3500000
+            }
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "A request to get rate profile",
+      "providerState": "Given Rate Profile",
+      "request": {
+        "method": "GET",
+        "path": "/Rates/Profile",
+        "query": "applicationId=3d3a1e01-5832-4ba1-9bd9-c767c737afd9&experienceType=Standard&vehicleCategory=Car"
+      },
+      "response": {
+        "body": {
+          "MaxAmount": 5000000,
+          "MaxTerm": 84,
+          "MinAmount": 200100
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "10.4.1"
+    },
+    "pactRust": {
+      "ffi": "0.4.0",
+      "models": "1.0.4"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "RateServiceProvider"
+  }
+}

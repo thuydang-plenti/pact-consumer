@@ -1,0 +1,380 @@
+{
+  "consumer": {
+    "name": "FinancialServiceConsumer"
+  },
+  "interactions": [
+    {
+      "description": "A request to Financial service",
+      "providerState": "Given Financial loan amount",
+      "request": {
+        "method": "GET",
+        "path": "/financequote/application/3d3a1e01-5832-4ba1-9bd9-c767c737afd9/quote",
+        "query": "loanAmount=10000"
+      },
+      "response": {
+        "body": {
+          "additionalInformation": {
+            "AppRequiresFSRConsideration": "true",
+            "canUseAutoPremiumBucket": "true",
+            "canUseFlex": "false",
+            "isAuthorizedToShowDetailedQuote": "False",
+            "isCaravanBroker": "True",
+            "loanAmount": "1000000",
+            "showIncomeVerificationType": "False"
+          },
+          "amountRequested": 10000,
+          "applicationId": "3d3a1e01-5832-4ba1-9bd9-c767c737afd9",
+          "productQuotes": [
+            {
+              "annualRate": 12.69,
+              "asicComparisonRate": 14.4,
+              "balloonAmount": 0,
+              "balloonPercentage": 0,
+              "customFees": [],
+              "description": "Variable rate 1 year loan",
+              "effectiveRate": 17.35,
+              "financierRate": 12.69,
+              "fullPaymentSchedule": null,
+              "loanAmount": 10245,
+              "name": "1 Year Loan",
+              "paymentSchedule": null,
+              "productId": 8,
+              "rateType": "Variable",
+              "repayment": 913.57,
+              "repaymentFees": [],
+              "repaymentFrequency": "Monthly",
+              "term": 12,
+              "totalRepaid": 10962.84,
+              "upfrontFees": [
+                {
+                  "amount": 245,
+                  "feeType": "CreditAssistanceFee",
+                  "name": "Credit Assistance Fee"
+                }
+              ]
+            },
+            {
+              "annualRate": 12.69,
+              "asicComparisonRate": 14.4,
+              "balloonAmount": 0,
+              "balloonPercentage": 0,
+              "customFees": [],
+              "description": "Variable rate 2 year loan.",
+              "effectiveRate": 15.1,
+              "financierRate": 12.69,
+              "fullPaymentSchedule": null,
+              "loanAmount": 10245,
+              "name": "2 Year Loan Product",
+              "paymentSchedule": null,
+              "productId": 41,
+              "rateType": "Variable",
+              "repayment": 485.58,
+              "repaymentFees": [],
+              "repaymentFrequency": "Monthly",
+              "term": 24,
+              "totalRepaid": 11653.92,
+              "upfrontFees": [
+                {
+                  "amount": 245,
+                  "feeType": "CreditAssistanceFee",
+                  "name": "Credit Assistance Fee"
+                }
+              ]
+            },
+            {
+              "annualRate": 12.99,
+              "asicComparisonRate": 14.67,
+              "balloonAmount": 0,
+              "balloonPercentage": 0,
+              "customFees": [],
+              "description": "Fixed rate 3 year loan",
+              "effectiveRate": 14.67,
+              "financierRate": 12.99,
+              "fullPaymentSchedule": null,
+              "loanAmount": 10245,
+              "name": "3 Year Loan",
+              "paymentSchedule": null,
+              "productId": 111,
+              "rateType": "Fixed",
+              "repayment": 345.15,
+              "repaymentFees": [],
+              "repaymentFrequency": "Monthly",
+              "term": 36,
+              "totalRepaid": 12425.4,
+              "upfrontFees": [
+                {
+                  "amount": 245,
+                  "feeType": "CreditAssistanceFee",
+                  "name": "Credit Assistance Fee"
+                }
+              ]
+            },
+            {
+              "annualRate": 13.19,
+              "asicComparisonRate": 14.23,
+              "balloonAmount": 0,
+              "balloonPercentage": 0,
+              "customFees": [],
+              "description": "Fixed rate 4 year loan",
+              "effectiveRate": 14.49,
+              "financierRate": 13.19,
+              "fullPaymentSchedule": null,
+              "loanAmount": 10245,
+              "name": "4 Year Loan",
+              "paymentSchedule": null,
+              "productId": 112,
+              "rateType": "Fixed",
+              "repayment": 275.81,
+              "repaymentFees": [],
+              "repaymentFrequency": "Monthly",
+              "term": 48,
+              "totalRepaid": 13238.88,
+              "upfrontFees": [
+                {
+                  "amount": 245,
+                  "feeType": "CreditAssistanceFee",
+                  "name": "Credit Assistance Fee"
+                }
+              ]
+            },
+            {
+              "annualRate": 13.19,
+              "asicComparisonRate": 14.23,
+              "balloonAmount": 0,
+              "balloonPercentage": 0,
+              "customFees": [],
+              "description": "Fixed rate 5 year loan",
+              "effectiveRate": 14.23,
+              "financierRate": 13.19,
+              "fullPaymentSchedule": null,
+              "loanAmount": 10245,
+              "name": "5 Year Loan",
+              "paymentSchedule": null,
+              "productId": 113,
+              "rateType": "Fixed",
+              "repayment": 234.1,
+              "repaymentFees": [],
+              "repaymentFrequency": "Monthly",
+              "term": 60,
+              "totalRepaid": 14046,
+              "upfrontFees": [
+                {
+                  "amount": 245,
+                  "feeType": "CreditAssistanceFee",
+                  "name": "Credit Assistance Fee"
+                }
+              ]
+            },
+            {
+              "annualRate": 13.89,
+              "asicComparisonRate": 14.93,
+              "balloonAmount": 0,
+              "balloonPercentage": 0,
+              "customFees": [],
+              "description": "72 Month Personal and Renewable Warehouse Loan",
+              "effectiveRate": 14.84,
+              "financierRate": 13.89,
+              "fullPaymentSchedule": null,
+              "loanAmount": 10245,
+              "name": "Warehouse Loan 72 Month Personal and Renewable",
+              "paymentSchedule": null,
+              "productId": 60,
+              "rateType": "Fixed",
+              "repayment": 210.5,
+              "repaymentFees": [],
+              "repaymentFrequency": "Monthly",
+              "term": 72,
+              "totalRepaid": 15156,
+              "upfrontFees": [
+                {
+                  "amount": 245,
+                  "feeType": "CreditAssistanceFee",
+                  "name": "Credit Assistance Fee"
+                }
+              ]
+            },
+            {
+              "annualRate": 13.89,
+              "asicComparisonRate": 14.93,
+              "balloonAmount": 0,
+              "balloonPercentage": 0,
+              "customFees": [],
+              "description": "84 Month Personal and Renewable Warehouse Loan",
+              "effectiveRate": 14.67,
+              "financierRate": 13.89,
+              "fullPaymentSchedule": null,
+              "loanAmount": 10245,
+              "name": "Warehouse Loan 84 Month Personal and Renewable",
+              "paymentSchedule": null,
+              "productId": 62,
+              "rateType": "Fixed",
+              "repayment": 191.37,
+              "repaymentFees": [],
+              "repaymentFrequency": "Monthly",
+              "term": 84,
+              "totalRepaid": 16075.08,
+              "upfrontFees": [
+                {
+                  "amount": 245,
+                  "feeType": "CreditAssistanceFee",
+                  "name": "Credit Assistance Fee"
+                }
+              ]
+            }
+          ],
+          "quoteCreated": "2023-03-09T23:58:23.129627Z"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "A request to get rate",
+      "providerState": "Given Rate",
+      "request": {
+        "method": "GET",
+        "path": "/Rates/OriginationTiers"
+      },
+      "response": {
+        "body": [
+          {
+            "maxLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 999999
+            },
+            "maxOriginationFee": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 99000
+            },
+            "minLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 0
+            }
+          },
+          {
+            "maxLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 1999999
+            },
+            "maxOriginationFee": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 150000
+            },
+            "minLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 1000000
+            }
+          },
+          {
+            "maxLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 3499999
+            },
+            "maxOriginationFee": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 200000
+            },
+            "minLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 2000000
+            }
+          },
+          {
+            "maxLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 9223372036854776000
+            },
+            "maxOriginationFee": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 250000
+            },
+            "minLoanAmount": {
+              "currency": {
+                "Prefix": "$"
+              },
+              "value": 3500000
+            }
+          }
+        ],
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    },
+    {
+      "description": "A request to get rate profile",
+      "providerState": "Given Rate Profile",
+      "request": {
+        "method": "GET",
+        "path": "/Rates/Profile",
+        "query": "applicationId=3d3a1e01-5832-4ba1-9bd9-c767c737afd9&experienceType=Standard&vehicleCategory=Car"
+      },
+      "response": {
+        "body": {
+          "MaxAmount": 5000000,
+          "MaxTerm": 84,
+          "MinAmount": 200100
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "$.body": {
+            "match": "type"
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "10.4.1"
+    },
+    "pactRust": {
+      "ffi": "0.4.0",
+      "models": "1.0.4"
+    },
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "provider": {
+    "name": "FinancialServiceProvider"
+  }
+}
